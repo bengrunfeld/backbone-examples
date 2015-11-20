@@ -4,13 +4,18 @@ var Student = Backbone.Model.extend({
     college: "CU Denver",
     state: "Colorado"
   },
-  initialize: function(){
-    console.log("Attributes: " + JSON.stringify(this.attributes));
-  },
   validate: function(attrs){
-    if (attrs.state !== "Colorado") {
-      console.log("Out of state. Invalid");
+    if (attrs.state !== 'Colorado') {
+      return "Out of state. Invalid";
     }
+  },
+  initialize: function(){
+    console.log("Model has been instantiated");
+
+    // Set listener for invalid event
+    this.on('invalid', function(model, error){
+      console.log(error);
+    });
   }
 });
 
@@ -20,5 +25,3 @@ var tom = new Student();
 // Set some attributes
 tom.set({state: "California"}, {validate: true});
 
-// Check the result
-console.log(tom.toJSON());
