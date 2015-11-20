@@ -26,3 +26,5 @@ var tom = new Student();
 // Set some attributes
 tom.set({state: "California"}, {validate: true});
 
+// See what happened to the value
+console.log(tom.toJSON());
