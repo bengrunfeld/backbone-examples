@@ -14,6 +14,7 @@ var Student = Backbone.Model.extend({
 
     // Set listener for invalid event
     this.on('invalid', function(model, error){
+      console.log(model);
       console.log(error);
     });
   }
