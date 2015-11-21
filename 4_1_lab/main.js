@@ -1,6 +1,4 @@
 var StudentView = Backbone.View.extend({
-  tagName: 'p',
-  className: 'student-title',
   el: '.target',
 
   render: function(){
