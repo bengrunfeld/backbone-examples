@@ -1,6 +1,6 @@
 var ButtonView = Backbone.View.extend({  
   tagName: 'button',
-  className: 'coolness',
+  className: 'greeting-btn',
 
   initialize: function(attrs) {
     this.options = attrs;
@@ -9,6 +9,14 @@ var ButtonView = Backbone.View.extend({
   render: function(){
     this.$el.html(this.options.args);
     return this;
+  },
+
+  events: {
+    'click': 'greeting'
+  },
+
+  greeting: function(){
+    console.log('Hello there');
   }
 });
 
