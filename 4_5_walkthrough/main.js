@@ -20,7 +20,7 @@ var ButtonView = Backbone.View.extend({
   }
 });
 
-var ContainerView = Backbone.View.extend({
+var ParentView = Backbone.View.extend({
   el: $('.target'),
 
   render: function(){
@@ -29,6 +29,12 @@ var ContainerView = Backbone.View.extend({
   }
 });
 
+var parent_view = new ParentView();
+parent_view.render();
 
-var container_view = new ContainerView();
-container_view.render();
+
+
+
+
+
+

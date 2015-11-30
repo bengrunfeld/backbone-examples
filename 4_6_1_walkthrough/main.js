@@ -26,3 +26,8 @@ var btn_view = new ButtonView();
 $('.target').append('<button class="btn1">Button 1</button>');
 $('.target').append('<button class="btn2">Button 2</button>');
 $('.target').append('<button class="btn3">Button 3</button>');
+
+
+
+
+

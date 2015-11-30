@@ -21,7 +21,13 @@ var StudentView = Backbone.View.extend({
   }
 });
 
-// var tom = new Student();
 var tom = new StudentModel({name: "Tom"});
 var tom_view = new StudentView({model: tom});
 tom_view.render();
+
+
+
+
+
+
+

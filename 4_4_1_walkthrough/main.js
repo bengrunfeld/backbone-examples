@@ -1,7 +1,7 @@
-// Define a Student View
+// Define a Button View
 var ButtonView = Backbone.View.extend({
   el: '.btn1',
-
+  
   events: {
     click: function(e) {
       console.log("You clicked the button");
@@ -10,4 +10,4 @@ var ButtonView = Backbone.View.extend({
 });
 
 var btn_view = new ButtonView();
-btn_view.setElement($('.btn2'));
+// btn_view.setElement($('.btn2'));

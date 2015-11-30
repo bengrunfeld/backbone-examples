@@ -8,6 +8,6 @@ var StudentView = Backbone.View.extend({
   }
 });
 
-// var tom = new Student();
+// Instantiate your View and render it
 var student_view = new StudentView();
 student_view.render();
