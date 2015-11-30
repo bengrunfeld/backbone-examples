@@ -1,14 +1,22 @@
-// Define a Student Model
+// Define a Item Model
 var ItemModel = Backbone.Model.extend({
   defaults: {
     img_src: 'placeholder.gif'
   },
 });
 
-// Define a Student View
+// Define a Item View
 var ItemView = Backbone.View.extend({
-  el: '.target',
+
   template: _.template($('#item-tpl').html()),
+
+  events: {
+    '.remove-me click': 'removeMe'
+  },
+
+  removeMe: function(){
+    console.log('hi');
+  },
 
   render: function(){
     var item_tpl = this.template(this.model.toJSON());
@@ -17,8 +25,31 @@ var ItemView = Backbone.View.extend({
   }
 });
 
+// Define a Collection View
+var CollectionView = Backbone.View.extend({
+  el: '.target',
+  render: function(){
+    this.collection.each(function(itemModel){
+      var itemView = new ItemView({model: itemModel});
+      this.$el.append(itemView.render().el);
+    }, this);
+    
+    return this;
+  }
+});
+
+// Define a Collection
+var Collection = Backbone.Collection.extend({
+  model: ItemModel
+});
+
+// Instatiate your model and view
 var broccoli = new ItemModel({img_src: 'broccoli.jpg', img_alt: 'broccoli', caption: 'Delicious broccoli'});
+var steak = new ItemModel({img_src: 'steak.png', img_alt: 'steak', caption: 'Grilled Steak'});
+var tofu = new ItemModel({img_src: 'tofu.jpg', img_alt: 'tofu', caption: 'Seared Tofu'});
 
-broccoli_view = new ItemView({model: broccoli});
+var menuCollection = new Collection([broccoli, steak, tofu]);
 
-broccoli_view.render();
+var collectionView = new CollectionView({collection: menuCollection});
+
+collectionView.render();

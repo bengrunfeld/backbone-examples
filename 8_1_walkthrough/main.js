@@ -29,8 +29,6 @@ var AppRouter = Backbone.Router.extend({
   }
 });
 
-
-
 var router = new AppRouter();
 var view = new BookView();
 
