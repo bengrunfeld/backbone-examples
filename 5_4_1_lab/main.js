@@ -26,6 +26,7 @@ var ItemView = Backbone.View.extend({
   },
 });
 
+
 // Define a Collection View
 var CollectionView = Backbone.View.extend({
   el: '.target',
@@ -58,14 +59,26 @@ var steak = new ItemModel({img_src: 'steak.png', img_alt: 'steak', caption: 'Gri
 var tofu = new ItemModel({img_src: 'tofu.jpg', img_alt: 'tofu', caption: 'Seared Tofu'});
 var salmon = new ItemModel({img_src: 'salmon.jpg', img_alt: 'salmon', caption: 'Smoked Salmon'});
 
+// Instantiate a new collection
 var menuCollection = new Collection([broccoli, steak, tofu]);
 
+// Instantiate a new collection view
 var collectionView = new CollectionView({collection: menuCollection});
 
+// Render
 collectionView.render();
 
+// Extra
 menuCollection.add(salmon);
 
 collectionView.removeAllViews();
 
 collectionView.render();
+
+
+
+
+
+
+
+
