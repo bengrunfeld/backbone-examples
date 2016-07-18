@@ -24,7 +24,8 @@ var Student = Backbone.Model.extend({
 var tom = new Student();
 
 // Set some attributes
-tom.set({state: "California"}, {validate: true});
+tom.set({state: "Colorado"}, {validate: true});
+// tom.set({state: "California"}, {validate: true});
 
 // See what happened to the value
 console.log(tom.toJSON());

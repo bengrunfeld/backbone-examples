@@ -10,4 +10,4 @@ var ButtonView = Backbone.View.extend({
 });
 
 var btn_view = new ButtonView();
-// btn_view.setElement($('.btn2'));
+//btn_view.setElement($('.btn2'));
